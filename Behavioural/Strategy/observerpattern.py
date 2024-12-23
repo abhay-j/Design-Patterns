@@ -88,7 +88,7 @@ class User(UserObserverInterface):
         self.email = email
           
     def update(self):
-        print(f"{self.name} notified Item status")
+        print(f"notified Item status to {self.name} as {self.OOS_Observable.getStatus()}")
     
         
 
@@ -121,7 +121,7 @@ outOfStockNotifier.register(user1)
 outOfStockNotifier.register(user2)
 
 #print initial status of the product
-print(f"Initial Status  of : {outOfStockNotifier.getStatus()}")
+print(f"Initial Status: {outOfStockNotifier.getStatus()}")
 
 #updated the status of the prodcut
 outOfStockNotifier.setStatus(val=True)
