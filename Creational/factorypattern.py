@@ -1,6 +1,6 @@
 """ 
 Factory pattern is used when we want to create objects based on a choice. 
-The client just states the choice and the factory returns the object of the choice to the client
+The client just states the choice and the factory method returns the object of the choice to the client
 """
 from __future__ import annotations
 from abc import ABC, abstractmethod
@@ -37,3 +37,17 @@ class Circle(Shape):
 class Square(Shape):
     def draw(self):
         return "Drawing a square"
+    
+    
+if __name__ == "__main__":
+    squarefactory = SquareFactory()
+    circlefactory = CircleFactory()
+    
+    squareshape = squarefactory.factoryMethod()
+    msg1 = squareshape.draw()
+    print(msg1)
+    
+    circleshape = circlefactory.factoryMethod()
+    msg2 = circleshape.draw()   
+    print(msg2) 
+    
